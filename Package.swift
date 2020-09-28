@@ -1,24 +1,26 @@
+// swift-tools-version:5.3
+// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "LogManager",
     platforms: [
-        .iOS(.v10),
+      .iOS(.v9)
     ],
     products: [
         .library(
             name: "LogManager",
-            targets: ["LogManager"]
-        ),
+            targets: ["LogManager"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/CatMaster-Developer/LogManager.git", from: "1.0.0"),
     ],
     targets: [
         .target(
             name: "LogManager",
-            dependencies: ["LogManager"]
-        ),
+            dependencies: []),
+        .testTarget(
+            name: "LogManagerTests",
+            dependencies: ["LogManager"]),
     ]
 )
