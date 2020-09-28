@@ -5,9 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "LogManager",
-    platforms: [
-      .iOS(.v9)
-    ],
+    platforms: [ .iOS(.v9) ],
     products: [
         .library(
             name: "LogManager",
@@ -19,9 +17,6 @@ let package = Package(
         .target(
             name: "LogManager",
             dependencies: []),
-        .testTarget(
-            name: "LogManagerTests",
-            dependencies: ["LogManager"]),
     ],
     swiftLanguageVersions: [
         .v5
