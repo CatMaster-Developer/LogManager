@@ -5,7 +5,7 @@ let package = Package(
     name: "LogManager",
     platforms: [
         .iOS(.v10),
-    ]
+    ],
     products: [
         .library(
             name: "LogManager",
