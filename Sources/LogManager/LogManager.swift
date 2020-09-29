@@ -3,7 +3,7 @@
 import UIKit
 
 
-class LogManager: NSObject {
+open class LogManager: NSObject {
     
     /// Instance
     static let instane = LogManager()
@@ -12,7 +12,7 @@ class LogManager: NSObject {
     private(set) var logType:LogType = [.desktop, .llvm]
     
     /// set to log type
-    open func setLogType( _ logType:LogType) {
+    func setLogType( _ logType:LogType) {
         self.logType = logType
     }
     
