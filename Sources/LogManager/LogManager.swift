@@ -2,8 +2,22 @@
 
 import UIKit
 
+//public struct LogType : OptionSet {
+//    public let rawValue:Int
+//
+//    static let none = LogType(rawValue: 1 << 0)     // not log
+//    static let llvm = LogType(rawValue: 1 << 1)  // llvm view log( nslog or print )
+//    static let device = LogType(rawValue: 1 << 2)   // mobile device log ( for users or customers )
+//    static let desktop = LogType(rawValue: 1 << 3)  // mac desktop log ( for developer )
+//
+//    public init(rawValue: Int) {
+//        self.rawValue = rawValue
+//    }
+//
+//}
 
-class LogManager: NSObject {
+
+public class LogManager: NSObject {
     
     /// Instance
     static public let instane = LogManager()
@@ -12,7 +26,7 @@ class LogManager: NSObject {
     private(set) var logType:LogType = [.desktop, .llvm]
     
     /// set to log type
-    open func setLogType( _ logType:LogType) {
+    public func setLogType( _ logType:LogType) {
         self.logType = logType
     }
     
@@ -22,7 +36,7 @@ class LogManager: NSObject {
     ///   - file: The Called file name
     ///   - function: The Called function name
     ///   - line: The Called file line
-    open func trace( _ file:String = #fileID,
+    public func trace( _ file:String = #fileID,
                      _ function:String = #function,
                      _ line:Int = #line) {
         trace(msg: "")
@@ -35,7 +49,7 @@ class LogManager: NSObject {
     ///   - function: The Called function name
     ///   - line: The Called file line
     ///   - msg: The Log String
-    open func trace( _ file:String = #fileID,
+    public func trace( _ file:String = #fileID,
                      _ function:String = #function,
                      _ line:Int = #line,
                      msg:String) {
@@ -120,12 +134,16 @@ extension LogManager {
 extension LogManager {
     
     public struct LogType : OptionSet {
-        let rawValue:Int
-        
+        public let rawValue:Int
+
         static let none = LogType(rawValue: 1 << 0)     // not log
         static let llvm = LogType(rawValue: 1 << 1)  // llvm view log( nslog or print )
         static let device = LogType(rawValue: 1 << 2)   // mobile device log ( for users or customers )
         static let desktop = LogType(rawValue: 1 << 3)  // mac desktop log ( for developer )
+        
+        public init(rawValue: Int) {
+            self.rawValue = rawValue
+        }
     }
     
 }
