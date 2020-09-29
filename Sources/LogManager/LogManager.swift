@@ -3,16 +3,16 @@
 import UIKit
 
 
-open class LogManager: NSObject {
+class LogManager: NSObject {
     
     /// Instance
-    static let instane = LogManager()
+    static public let instane = LogManager()
     
     /// The Log Type [ struct : LogType ]
     private(set) var logType:LogType = [.desktop, .llvm]
     
     /// set to log type
-    func setLogType( _ logType:LogType) {
+    open func setLogType( _ logType:LogType) {
         self.logType = logType
     }
     
@@ -119,7 +119,7 @@ extension LogManager {
 /// define
 extension LogManager {
     
-    struct LogType : OptionSet {
+    public struct LogType : OptionSet {
         let rawValue:Int
         
         static let none = LogType(rawValue: 1 << 0)     // not log
