@@ -11,6 +11,7 @@ public class LogManager: NSObject {
     private(set) var logType:LogType = [.desktop, .llvm]
     
     /// set to log type
+    /// - Parameter logType: The Log Type [ struct : LogType ]
     public func setLogType( _ logType:LogType) {
         self.logType = logType
     }
@@ -21,7 +22,7 @@ public class LogManager: NSObject {
     ///   - file: The Called file name
     ///   - function: The Called function name
     ///   - line: The Called file line
-    public func trace( _ file:String = #fileID,
+    internal func trace( _ file:String = #fileID,
                      _ function:String = #function,
                      _ line:Int = #line) {
         trace(msg: "")
