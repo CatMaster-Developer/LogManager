@@ -1,4 +1,15 @@
 
+
+/// Write Log ( not Message )
+///
+
+
+/// Set LogType
+/// - Parameter logType: The Log Type [ struct : LogType ]
+public func LogType(_ logType: LogManager.LogType) {
+    LogManager.instane.trace()
+}
+
 /// Write Log ( not Message )
 ///
 public func TRACE() {
