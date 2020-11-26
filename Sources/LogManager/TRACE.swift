@@ -1,9 +1,4 @@
 
-/// Define TRACE API
-
-/// Write Log ( not Message )
-///
-
 /// Write Log ( not Message )
 ///
 public func TRACE() {

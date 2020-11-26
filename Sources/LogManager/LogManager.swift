@@ -50,16 +50,16 @@ public class LogManager: NSObject {
         let data = logTextFormat.data(using: .utf8)
         guard let dataU = data else { return }
         
-        // case : llvm
+        //MARK: llvm
         if logType.contains(.llvm) {
             print(logTextFormat)
         }
         
-        // case : device
+        //MARK: device( Write to iPhone's log file )
         if logType.contains(.device) {
         }
         
-        // case : desktop
+        //MARK: desktop( write to mac's log file )
         if logType.contains(.desktop) {
             guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
             let fileURL = dir.appendingPathComponent("streamLog.txt")
