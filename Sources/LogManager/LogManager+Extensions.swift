@@ -21,7 +21,7 @@ extension LogManager {
         
         // to desktop
         if logType.contains(.desktop) {
-            guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return  }
+            guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
             let fileURL = dir.appendingPathComponent("streamLog.txt")
             if !FileManager.default.fileExists(atPath: fileURL.path) {
                 do {
@@ -32,7 +32,6 @@ extension LogManager {
             }
         }
     }
-    
 }
 
 

@@ -1,9 +1,5 @@
 
 
-/// Write Log ( not Message )
-///
-
-
 /// Set LogType
 /// - Parameter logType: The Log Type [ struct : LogType ]
 public func LogType(_ logType: LogManager.LogType) {
